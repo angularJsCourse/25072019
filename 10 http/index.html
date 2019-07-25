@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="dataApp">
+
+<head>
+    <title>Clock!</title>
+    <script src="angular.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="parentCtrl.js"></script>
+
+    <script src="fac.service.js"></script>
+    <script src="value.service.js"></script>
+    <script src="service.service.js"></script>
+    <script src="const.service.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+
+    <div ng-controller="parentCtrl">
+        <p>
+            <input type="number" ng-model="idToReq" />
+            <button name="b1" ng-click="getUrlById()">get url by id</button>
+            <p ng-if="!checkError()">title:   {{vs.data['title']}}</p>
+
+        </p>
+        <p ng-if="checkError()"> Error!!! http error code is: {{vs.data['status']}}</p>
+
+    </div>
+
+
+
+
+
+    <br>
+</body>
+
+</html>
