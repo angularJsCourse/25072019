@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="dataApp">
+
+<head>
+    <title>game!</title>
+    <script src="angular.js"></script>
+    <script src="bootstrap.js"></script>
+    <script src="parentCtrl.js"></script>
+    <script src="sCtrl.js"></script>
+
+    <script src="value.service.js"></script>
+    <script src="service.service.js"></script>
+    <script src="const.service.js"></script>
+    <script src="api.service.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+
+    <div ng-controller="parentCtrl">
+
+        <button ng-click="click1($index)" ng-repeat="num in numbers track by $index">{{numbers[$index]}}</button>
+
+        <!-- <button ng-click="click1(0)">{{numbers[0]}}</button>
+        <button ng-click="click1(1)">{{numbers[1]}}</button>
+        <button ng-click="click1(2)">{{numbers[2]}}</button>
+        <button ng-click="click1(3)">{{numbers[3]}}</button> -->
+
+        <p>number of cards:
+            <input type="number" ng-model="leng" ></input>
+            <button ng-click="generateNumbers()" style="background: 0em">start game!</button>
+        </p>
+
+    </div>
+
+    <div ng-controller="aCtrl">
+        <p>You try: {{score.tries}} times</p>
+        <p>You guess: {{score.guessses}} times</p>
+
+    </div>
+
+
+
+    <br>
+</body>
+
+</html>
